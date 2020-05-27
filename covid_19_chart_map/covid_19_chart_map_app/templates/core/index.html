@@ -1,0 +1,46 @@
+
+
+<html>
+  <head>
+    <title>Covid Map</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    
+  </head>
+<body>
+  <!-- <div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+  </div> -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 col-sm-8">
+
+
+        <form class="form-inline" method="get">
+          <label for="country" class="mb-2 mr-sm-2">Country:</label>
+          <input type="text" class="form-control mb-2 mr-sm-2" name="countryname" class="form-control" placeholder="Enter Country" id="country">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        {% if user %}
+          <p><strong>{{ user.confirmed.value }} confirmed case</strong></p> 
+          <!-- <p><strong>{{ user.confirmed.detail }} detail case</strong></p>  -->
+          <p> and has <strong>{{ user.recovered.value }}</strong> recovered cases.</p>
+          <p> and has <strong>{{ user.deaths.value }}</strong> death cases.</p>
+          <p> and has <strong>{{ user.confirmed.value.active }}</strong> Active cases.</p>
+        {% endif %}
+      </div>
+      
+    </div>
+  </div>
+ 
+ 
+</body>
+</html>
