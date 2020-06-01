@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  
     
   </head>
 <body>
@@ -29,14 +29,15 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         
-        {% if user %}
-          <p><strong>{{ user.confirmed.value }} confirmed case</strong></p> 
-          <!-- <p><strong>{{ user.confirmed.detail }} detail case</strong></p>  -->
-          <p> and has <strong>{{ user.recovered.value }}</strong> recovered cases.</p>
-          <p> and has <strong>{{ user.deaths.value }}</strong> death cases.</p>
-          <p> and has <strong>{{ user.confirmed.value.active }}</strong> Active cases.</p>
+        {% if countries_name %}
+          <p><strong>{{ countries_name.confirmed.value }} confirmed case</strong></p> 
+          <p> and has <strong>{{ countries_name.recovered.value }}</strong> recovered cases.</p>
+          <p> and has <strong>{{ countries_name.deaths.value }}</strong> death cases.</p>
+          <p> and has <strong>{{ countries_name.confirmed.value.active }}</strong> Active cases.</p>
         {% endif %}
       </div>
+
+
       
     </div>
   </div>
