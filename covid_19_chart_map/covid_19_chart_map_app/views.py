@@ -7,26 +7,41 @@ import requests
 # Create your views here.
 
 def covid(request):
-    # labels = []
-    # data = []
+    
 
     countries_name = {}
+
+
+    # Country 
     if 'countryname' in request.GET:
         countryname = request.GET['countryname']
+        countryname = countryname.title()
         url = 'https://covid19.mathdro.id/api/countries/%s' % countryname
         response = requests.get(url)
         countries_name = response.json()
-    return render(request, 'core/index.html', {'countries_name': countries_name})
 
 
+   
+    
+  
+    return render(request, 'core/index.html', {'countries_name': countries_name, })
 
 
-    # queryset = City.objects.order_by('-population')[:5]
-    # for city in queryset:
-    #     labels.append(city.name)
-    #     data.append(city.population)
+def pie_chart(request):
+    labels = []
+    data = []
 
-    # return render(request, 'pie_chart.html', {
-    #     'labels': labels,
-    #     'data': data,
-    # })
+    queryset = {}
+    for countrys in queryset:
+        countrys = request.GET['countrys']
+        url = 'https://covid19.mathdro.id/api/countries/%s' % countrys
+        response = requests.get(url)
+        queryset = response.json()
+        labels.append(country.confirmed)
+        data.append(country.recovered)
+
+    return render(request, 'core/index.html', {
+        'labels': labels,
+        'data': data,
+        'queryset': queryset
+    })
